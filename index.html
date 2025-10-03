@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HI</title>
+  </head>
+  <body>
+    <div id="fallback-banner" style="background:#e11d48;color:white;padding:8px;text-align:center;font-weight:600">
+      If you see this banner the React app failed to mount — check the browser console for errors.
+    </div>
+    <div id="root">
+      <!-- Static fallback content: will be hidden/replaced by React on successful mount -->
+      <div id="static-fallback" style="padding:2rem;text-align:center;color:#111;background:#fff;margin:2rem;border-radius:8px;">
+        <h2 style="margin:0 0 .5rem">App is loading…</h2>
+        <p style="margin:0">If this message stays visible, open the browser console to see errors.</p>
+      </div>
+    </div>
+    <script>
+      window.addEventListener('error', function (e) {
+        const banner = document.getElementById('fallback-banner')
+        if (banner) banner.style.display = 'block'
+        const sf = document.getElementById('static-fallback')
+        if (sf) sf.style.display = 'none'
+        const box = document.createElement('pre')
+        box.style.whiteSpace = 'pre-wrap'
+        box.style.background = '#fee'
+        box.style.color = '#111'
+        box.style.padding = '1rem'
+        box.style.margin = '1rem'
+        box.textContent = 'Runtime error: ' + e.message + '\n' + (e.error && e.error.stack ? e.error.stack : '')
+        document.body.appendChild(box)
+      })
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
