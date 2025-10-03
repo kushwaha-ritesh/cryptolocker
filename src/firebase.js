@@ -4,12 +4,13 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPasswor
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "SENDER_ID",
-  appId: "APP_ID",
+  apiKey: "AIzaSyAw89dbFjgTqnM1cCqMua6ia6jqVkBStt8",
+  authDomain: "rupeelocker.firebaseapp.com",
+  projectId: "rupeelocker",
+  storageBucket: "rupeelocker.firebasestorage.app",
+  messagingSenderId: "481920793711",
+  appId: "1:481920793711:web:47f34deb74d51a9754a19a",
+  measurementId: "G-TGX9DZYVLT"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -22,7 +23,8 @@ export const signInWithGoogle = async () => {
     const result = await signInWithPopup(auth, googleProvider);
     return result.user;
   } catch (err) {
-    console.error(err);
+    console.error("Google Sign-in Error:", err);
+    throw err; // Rethrow the error so it can be caught by the component
   }
 };
 
