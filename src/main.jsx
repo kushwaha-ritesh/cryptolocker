@@ -11,8 +11,8 @@ import '@rainbow-me/rainbowkit/styles.css';
 const queryClient = new QueryClient();
 
 const config = getDefaultConfig({
-  appName: "RupeeLocker",
-  projectId: "YOUR_WALLETCONNECT_PROJECT_ID", // required for WalletConnect
+  appName: "Cryptolocker",
+  projectId: "a807f110e64f93312338efb1673c26ab", // required for WalletConnect
   chains: [mainnet, polygon, arbitrum, optimism, bsc],
 });
 
