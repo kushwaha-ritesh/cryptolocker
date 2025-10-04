@@ -1,5 +1,8 @@
 // src/pages/Dashboard.jsx
 import React, { useState } from "react";
+import UserMenu from "../components/UserMenu";
+import Sidebar from '../components/Sidebar';
+// import ProtectedRoute from "../components/ProtectedRoute";
 
 const walletsData = [
   { name: "Metamask", balance: "2.5 ETH" },
@@ -10,12 +13,14 @@ const walletsData = [
 const Dashboard = () => {
   const [wallets, setWallets] = useState(walletsData);
 
+
   return (
-    <div className="min-h-screen flex bg-gray-100">
-      {/* Sidebar */}
-      <aside className="w-64 bg-indigo-700 text-white flex flex-col p-6">
-        <h1 className="text-2xl font-bold mb-8">RupeeLocker</h1>
-        <nav className="flex flex-col space-y-4">
+    <div className="flex flex-col md:flex-row">
+      {/* Sidebar
+      <aside className="w-64 bg-indigo-700 text-white flex flex-col p-6 justify-between">
+        
+        <nav className="flex flex-col space-y-4 justify-between">
+          <h1 className="text-2xl font-bold mb-8">RupeeLocker</h1>
           <button className="text-left px-4 py-2 rounded hover:bg-indigo-600 transition">
             Dashboard
           </button>
@@ -26,8 +31,13 @@ const Dashboard = () => {
             Settings
           </button>
         </nav>
-      </aside>
 
+        <div className="p-4">
+          <UserMenu />
+        </div>
+
+      </aside> */}
+      <Sidebar />
       {/* Main Content */}
       <main className="flex-1 p-8">
         <h2 className="text-3xl font-bold mb-6">My Wallets</h2>

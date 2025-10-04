@@ -3,6 +3,7 @@ import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard"; // create this later
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Wallets from "./pages/Wallets";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/wallets" element={<Wallets />} />
+
       </Routes>
     </Router>
   );
