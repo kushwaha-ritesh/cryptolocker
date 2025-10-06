@@ -14,10 +14,9 @@
       "**/node_modules/**"
     ],
     "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
+      { 
+        "source": "/api/**", "destination": "https://cryptolocker.vercel.app/api/**" },
+       { "source": "**", "destination": "/index.html" }
     ]
   }
 }
