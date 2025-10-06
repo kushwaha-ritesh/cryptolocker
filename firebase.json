@@ -7,7 +7,7 @@
   },
   "hosting": {
     "site": "cryptolocker", 
-    "public": "dist",
+    "public": "frontend/dist",
     "ignore": [
       "firebase.json",
       "**/.*",
