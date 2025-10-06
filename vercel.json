@@ -1,1 +1,11 @@
-mm
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/backend/api/$1.js"
+    }
+  ],
+  "builds": [
+    { "src": "backend/api/**/*.js", "use": "@vercel/node" }
+  ]
+}
